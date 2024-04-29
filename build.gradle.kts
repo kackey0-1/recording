@@ -20,6 +20,15 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    // implementation("org.springframework.boot:spring-boot-devtools")
+    // implementation("org.springframework.boot:spring-boot-actuator")
+
+    // social login
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
+    implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
