@@ -8,8 +8,8 @@ import java.security.Principal
 @RestController
 class UserController {
 
-    @GetMapping("/user")
-    fun user(principal: Principal): Principal {
-        return principal
-    }
+  @GetMapping("/user")
+  fun user(principal: Principal): Principal {
+    return principal
+  }
 }

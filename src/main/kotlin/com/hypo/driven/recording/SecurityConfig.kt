@@ -2,11 +2,8 @@ package com.hypo.driven.recording
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.security.config.Customizer
-import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer
-import org.springframework.security.web.SecurityFilterChain
 
 @Configuration
 @EnableWebSecurity
@@ -28,10 +25,10 @@ class SecurityConfig {
 //        return http.build()
 //    }
 
-    @Bean
-    fun webSecurityCustomizer(): WebSecurityCustomizer {
-        return WebSecurityCustomizer { web ->
-            web.debug(true) // デバッグモードを有効にする
-        }
+  @Bean
+  fun webSecurityCustomizer(): WebSecurityCustomizer {
+    return WebSecurityCustomizer { web ->
+      web.debug(true) // デバッグモードを有効にする
     }
+  }
 }

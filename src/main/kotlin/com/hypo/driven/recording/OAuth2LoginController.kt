@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.GetMapping
 @Controller
 class OAuth2LoginController {
 
-    @GetMapping("/")
-    fun index(
-        model: Model,
-        @RegisteredOAuth2AuthorizedClient authorizedClient: OAuth2AuthorizedClient,
-        @AuthenticationPrincipal oauth2User: OAuth2User
-    ): String {
-        model.addAttribute("userName", oauth2User.name)
-        model.addAttribute("clientName", authorizedClient.clientRegistration.clientName)
-        model.addAttribute("userAttributes", oauth2User.attributes)
-        return "index"
-    }
+  @GetMapping("/")
+  fun index(
+    model: Model,
+    @RegisteredOAuth2AuthorizedClient authorizedClient: OAuth2AuthorizedClient,
+    @AuthenticationPrincipal oauth2User: OAuth2User
+  ): String {
+    model.addAttribute("userName", oauth2User.name)
+    model.addAttribute("clientName", authorizedClient.clientRegistration.clientName)
+    model.addAttribute("userAttributes", oauth2User.attributes)
+    return "index"
+  }
 }
