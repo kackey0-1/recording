@@ -3,9 +3,13 @@
 ## 開発環境
 
 - Java 21
-- Kotlin & Spring Boot 2.5.5
+- Kotlin & Spring Boot
+  - Spring Boot: 3.2.5
+  - Kotlin: 1.9.23
 - SonarCloud
 - Typescript & React
+  - nodejs: v20.12.2
+  - 
 
 ## Description
 
