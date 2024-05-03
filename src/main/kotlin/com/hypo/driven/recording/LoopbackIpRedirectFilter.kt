@@ -39,19 +39,19 @@ import org.springframework.web.util.UriComponentsBuilder
 @Order(Ordered.HIGHEST_PRECEDENCE)
 class LoopbackIpRedirectFilter : OncePerRequestFilter() {
 
-    override fun doFilterInternal(
-        request: HttpServletRequest,
-        response: HttpServletResponse,
-        filterChain: FilterChain
-    ) {
-        if (request.serverName.equals("localhost") && request.getHeader("host") != null) {
-            val uri = UriComponentsBuilder.fromHttpRequest(ServletServerHttpRequest(request))
-                .host("127.0.0.1")
-                .build()
-            response.sendRedirect(uri.toUriString())
-            return
-        }
-        filterChain.doFilter(request, response)
+  override fun doFilterInternal(
+    request: HttpServletRequest,
+    response: HttpServletResponse,
+    filterChain: FilterChain
+  ) {
+    if (request.serverName.equals("localhost") && request.getHeader("host") != null) {
+      val uri = UriComponentsBuilder.fromHttpRequest(ServletServerHttpRequest(request))
+        .host("127.0.0.1")
+        .build()
+      response.sendRedirect(uri.toUriString())
+      return
     }
+    filterChain.doFilter(request, response)
+  }
 
 }
