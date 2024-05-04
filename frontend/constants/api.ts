@@ -15,4 +15,5 @@ export const zUpsertNote = z.object({
 
 export type Note = z.infer<typeof zNote>;
 export type Notes = z.infer<typeof zNotes>;
-export const apiUrl = "http://127.0.0.1:8081/api";
+
+export const apiUrl: string = "http://127.0.0.1:8081/api";

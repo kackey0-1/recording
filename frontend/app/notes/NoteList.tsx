@@ -3,6 +3,7 @@
 import Link from "next/link";
 import useSWR from "swr";
 import { Note, zNotes } from "./type";
+import {apiUrl} from "@/constants/api";
 
 type Props = {
   initialState: Note[];
@@ -16,7 +17,7 @@ const fetcher = (url: string) => fetch(url).then(async (res) => {
 
 const NoteList: React.FC<Props> = ({ initialState }) => {
   // FIXME クライアントサイドでのデータ取得 useMemo
-  const { data } = useSWR('/api/notes', fetcher, { suspense: true, fallbackData: initialState })
+  const { data } = useSWR(apiUrl + '/notes', fetcher, { suspense: true, fallbackData: initialState })
   return (
       <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-y-10">
         {data.map(note => <NoteItem key={note.id} item={note} />)}

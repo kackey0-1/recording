@@ -1,5 +1,6 @@
 package com.hypo.driven.recording
 
+import jakarta.persistence.Basic
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -18,11 +19,11 @@ class Note(
   var title: String?,
   @Column(name = "body", nullable = false)
   var body: String?,
-  @Column(name = "created_at", nullable = false)
-  var createdAt: Instant? = null,
-  @Column(name = "updated_at", nullable = false)
-  var updatedAt: Instant? = null,
+  @Column(name = "created_at")
+  var createdAt: Instant = Instant.now(),
+  @Column(name = "updated_at")
+  var updatedAt: Instant = Instant.now(),
 ) {
-  constructor() : this(null, null, null, null, null)
+  constructor() : this(null, null, null)
 }
 
