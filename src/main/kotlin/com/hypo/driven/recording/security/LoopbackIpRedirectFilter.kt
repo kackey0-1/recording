@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.hypo.driven.recording;
+package com.hypo.driven.recording.security;
 
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest

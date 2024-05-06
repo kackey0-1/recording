@@ -1,4 +1,4 @@
-// package com.hypo.driven.recording
+package com.hypo.driven.recording.security// package com.hypo.driven.recording
 //
 // import org.springframework.security.core.annotation.AuthenticationPrincipal
 // import org.springframework.security.oauth2.client.OAuth2AuthorizedClient

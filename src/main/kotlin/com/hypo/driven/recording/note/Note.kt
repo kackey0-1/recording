@@ -1,4 +1,4 @@
-package com.hypo.driven.recording.storage
+package com.hypo.driven.recording.note
 
 import com.hypo.driven.recording.NoArg
 import jakarta.persistence.Column
@@ -11,17 +11,19 @@ import java.time.Instant
 
 @NoArg
 @Entity
-@Table(name = "books")
-class Book(
+@Table(name = "notes")
+class Note(
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
   var id: Int? = null,
   @Column(name = "title", nullable = false)
-  var title: String,
+  var title: String?,
+  @Column(name = "body", nullable = false)
+  var body: String?,
   @Column(name = "created_at")
   var createdAt: Instant = Instant.now(),
   @Column(name = "updated_at")
   var updatedAt: Instant = Instant.now(),
 ) {
-  constructor() : this(null, "")
+  constructor() : this(null, null, null)
 }
 

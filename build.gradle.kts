@@ -36,6 +36,7 @@ dependencies {
 
   // datasource
   implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+  implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2")
   implementation("com.mysql:mysql-connector-j:8.2.0")
 
   implementation("org.jetbrains.kotlin:kotlin-reflect")

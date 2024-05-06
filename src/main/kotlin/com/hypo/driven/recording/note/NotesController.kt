@@ -1,6 +1,5 @@
-package com.hypo.driven.recording
+package com.hypo.driven.recording.note
 
-import com.hypo.driven.recording.storage.Note
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
