@@ -1,15 +1,20 @@
-package com.hypo.driven.recording
+package com.hypo.driven.recording.book
 
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 import java.time.LocalDate
 
 
 @CrossOrigin(origins = ["http://localhost:3000"])
 @RestController
-class RecordsController {
+class BookRecordsController(
+  private val bookRecordMapper: BookRecordMapper,
+) {
 
   @GetMapping("/api/records")
   fun getRecords(): List<BookRecordsResponse> {
@@ -23,7 +28,12 @@ class RecordsController {
   }
 
   @PostMapping("/api/record")
-  fun postRecord(): Int {
-    return 1001
+  fun postRecord(@RequestBody form: BookRecordForm): ResponseEntity<Unit> {
+    val book = Book(title = form.title)
+    bookRecordMapper.insert(book)
+    form.readDate?.let {
+      bookRecordMapper.createRecord(BookRecord(bookId = book.id!!, readDate = it))
+    }
+    return ResponseEntity(HttpStatus.CREATED)
   }
 }

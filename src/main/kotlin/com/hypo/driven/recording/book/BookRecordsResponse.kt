@@ -1,4 +1,4 @@
-package com.hypo.driven.recording
+package com.hypo.driven.recording.book
 
 import com.fasterxml.jackson.annotation.JsonFormat
 import java.time.LocalDate

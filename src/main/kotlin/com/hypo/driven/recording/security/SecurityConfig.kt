@@ -1,4 +1,4 @@
-// package com.hypo.driven.recording
+package com.hypo.driven.recording.security// package com.hypo.driven.recording
 //
 // import org.springframework.context.annotation.Configuration
 // import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
